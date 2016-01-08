@@ -30,7 +30,7 @@ print "Hello and welcome " + customer_name + ". Thank you for choosing Rad Renta
 
 # one array
 
-cars = ["Cobalt", "Nova", "Mustang"]
+cars = ["Cobalt", "Nova", "Mustang", "Panel Van"]
 cars.append(car_type)
 print "The vehicles we have availabe are ", cars
 
@@ -41,6 +41,31 @@ print "The vehicles we have availabe are ", cars
 color = dict()
 color = {"white":"granny", "red":"speed freak"}
 print "The color you chose says a lot about who you are. You must be a", color[car_color]
+
+
+
+
+# two conditionals
+
+if passenger_count <= 5:
+    setup = "any"
+    print "You can select " + setup + " car you want."
+else:
+    print "You have too many passengers, lose some or get the van."
+
+
+
+if miles_count > 100:
+    conserve = "Eco Friendly"
+    print "You are traveling too many miles for a gas guzzler. Take the " + conserve + " Alternative."
+else:
+    print "You aren't going far, take the sports car."
+
+
+
+# one function
+
+
 
 
 
