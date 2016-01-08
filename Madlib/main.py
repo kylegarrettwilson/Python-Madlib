@@ -74,6 +74,14 @@ print "You use roughly " + str(a) + " gallons of gas."
 
 
 
+# one loop
+
+if years_driving <= 10:
+    i = years_driving
+for i in range(0, 10):
+    print "You have been driving for " + str(i) + " years. "
+else:
+    print "You have been driving for too many years to count."
 
 
 
