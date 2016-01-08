@@ -65,6 +65,35 @@ else:
 
 # one function
 
+def gasMilage(x, y):
+    gas = x / y
+    return gas
+
+a = gasMilage(miles_count, 22)
+print "You use roughly " + str(a) + " gallons of gas."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
