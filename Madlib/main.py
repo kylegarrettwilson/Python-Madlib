@@ -20,9 +20,9 @@ car_color = raw_input("Do you want a white or red vehicle:  ")
 
 passenger_count = raw_input("Enter the number of passengers (including yourself):  ")
 
-miles_count = raw_input("Enter the number of miles you will drive:  ")
+miles_count = int(raw_input("Enter the number of miles you will drive:  "))
 
-years_driving = raw_input("Enter the number of years you have had a license:  ")
+years_driving = int(raw_input("Enter the number of years you have had a license:  "))
 
 
 print "Hello and welcome " + customer_name + ". Thank you for choosing Rad Rentals."
@@ -39,7 +39,7 @@ print "The vehicles we have availabe are ", cars
 # one dictionary
 
 color = dict()
-color = {"white":"granny", "red":"speed freak"}
+color = {"white":"granny.", "red":"speed freak."}
 print "The color you chose says a lot about who you are. You must be a", color[car_color]
 
 
@@ -70,18 +70,18 @@ def gasMilage(x, y):
     return gas
 
 a = gasMilage(miles_count, 22)
-print "You use roughly " + str(a) + " gallons of gas."
+print "You will use roughly " + str(a) + " gallons of gas."
 
 
 
 # one loop
 
-if years_driving <= 10:
-    i = years_driving
-for i in range(0, 10):
-    print "You have been driving for " + str(i) + " years. "
-else:
-    print "You have been driving for too many years to count."
+
+i = years_driving
+while i < 10:
+    print "You need a cosigner. You need at least " + str(i) + " responsible adults in the car. "
+    i = i+1
+
 
 
 
