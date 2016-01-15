@@ -36,17 +36,26 @@ class MainHandler(webapp2.RequestHandler):
 
 
     page_body = '''<form method="GET">
-        <label></label><input type="text" name="" />
-        <label></label><input type="text" name="" />
-        <label></label><input type="text" name="" />
-        <input type="radio" name="" value="" checked>...
-        <input type="radio" name="" value="" checked>...
-        <select name="">
-            <option value="">...</option>
-            <option value="">...</option>
-            <option value="">...</option>
-            <option value="">...</option>
+        <label>First Name: </label><input type="text" name="first" />
+        <label>Last Name: </label><input type="text" name="last" />
+        <label>Email: </label><input type="email" name="email" />
+        <input type="radio" name="gender" value="male" checked>Male
+        <br>
+        <input type="radio" name="gender" value="female">Female
+        <br>
+        <input type="radio" name="experience" value="yes" checked>I have a currently have a job
+        <br>
+        <input type="radio" name="experience" value="no">I do not currently have a job
+        <br>
+        <select name="education">
+            <option value="doctoral">I have a Phd</option>
+            <option value="masters">I have a Masters degree</option>
+            <option value="bachelors">I have a Bachelors degree</option>
+            <option value="associates">I have an Associates degree</option>
+            <option value="nodegree">I do not have a college degree</option>
         </select>
+        <label>How many days out of the week can you work?</label><br>
+        <input type="number" name="quantity" min="1" max="5">
         <input type="submit" value="Submit" />'''
 
 
