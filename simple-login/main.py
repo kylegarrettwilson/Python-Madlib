@@ -29,7 +29,26 @@ class MainHandler(webapp2.RequestHandler):
 
 
     </head>
-    '''
+    <body>'''
+
+
+
+
+
+    page_body = '''<form method="GET">
+    <label></label><input type="text" name="" />
+    <label></label><input type="text" name="" />
+    <label></label><input type="text" name="" />
+    <input type="radio" name="" value="" checked>...
+    <input type="radio" name="" value="" checked>...
+    <select name="">
+        <option value="">...</option>
+        <option value="">...</option>
+        <option value="">...</option>
+        <option value="">...</option>
+    </select>
+    <input type="submit" value="Submit" />'''
+
 
 
 
