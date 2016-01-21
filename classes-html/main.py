@@ -5,7 +5,10 @@ from pages import Page  #import Page class from pages
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = Page()
-        self.response.write(p.print_out())
+        p.title = "My page!"
+        p.css = "css/styles.css"
+        p.update()
+        self.response.write(p.whole_page)
 
 
 
