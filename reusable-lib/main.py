@@ -13,6 +13,7 @@
 import webapp2
 from page import FormPage
 from page import ResultsPage
+from library import JobData
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -21,14 +22,13 @@ class MainHandler(webapp2.RequestHandler):
         f = FormPage()
         r = ResultsPage()
 
-
-
         if self.request.GET:
-            name = self.request.GET['last']
-            hours = self.request.GET['hours']
-            pay = self.request.GET['pay']
-            over = self.request.GET['over']
-            self.response.write(name + hours + pay + over)
+            jb1 = JobData()
+            jb1.name = self.request.GET['last']
+            jb1.hours = self.request.GET['hours']
+            jb1.pay = self.request.GET['pay']
+            jb1.over = self.request.GET['over']
+            self.response.write(r.print_out_second() + jb1.name + jb1.hours + jb1.pay + jb1.over)
         else:
             self.response.write(f.print_out())
 

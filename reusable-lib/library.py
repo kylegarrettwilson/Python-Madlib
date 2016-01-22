@@ -4,6 +4,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class JobData(object):
     def __init__(self):
 
@@ -17,7 +35,7 @@ class JobData(object):
         def pay(self):
             return self.__pay
 
-        @year.setter
+        @pay.setter
         def pay(self, p):
             # checking if info is correct
             if p > 43:
