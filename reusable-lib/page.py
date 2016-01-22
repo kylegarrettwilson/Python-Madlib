@@ -21,24 +21,29 @@ class FormPage(object):  # this is the page class for holding the html elements
 
         self.body = """
             <form method="GET">
-            <label>Enter your last name: </label>
-            <input type="text" name="last" /><br><br>
+                <label>Enter your last name: </label>
+                <input type="text" name="last" /><br><br>
 
-            <label>Enter the number of hours worked this week (must be between 0 and 40): </label><br>
-            <input type="number" name="hours" min="0" max="40"><br>
+                <label>Enter the number of hours worked this week (must be between 0 and 40): </label><br>
+                <input type="number" name="hours" min="0" max="40"><br>
 
-            <label>Enter the amount you are paid per hour: </label><br>
-            <input type="number" name="pay"><br>
+                <label>Enter the amount you are paid per hour: </label><br>
+                <input type="number" name="pay"><br>
 
-            <label>Enter the number of over time hours you worked this week: </label><br>
-            <input type="number" name="over" min="0" max="40"><br>
-
-
+                <label>Enter the number of over time hours you worked this week: </label><br>
+                <input type="number" name="over" min="0" max="40"><br>
 
 
-
-
+                <br>
+                <br>
+                <input type="submit" value="Submit" />
 
             </form>
+
+        """
+
+        self.close = """
+    </body>
+</html>
 
         """
