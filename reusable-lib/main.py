@@ -22,6 +22,7 @@ class MainHandler(webapp2.RequestHandler):
             hours = self.request.GET['hours']
             pay = self.request.GET['pay']
             over = self.request.GET['over']
+            self.response.write(name + hours + pay + over)
         else:
             f = FormPage()
             self.response.write(f.print_out())
