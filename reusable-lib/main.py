@@ -32,7 +32,8 @@ class MainHandler(webapp2.RequestHandler):
             jb1.over = self.request.GET['over']
             pay.add_check(jb1)
             pay.calc_check()
-            r.body = pay.calc_check()
+            pay.over_time()
+            r.body = pay.calc_check() + pay.over_time()
             self.response.write(r.print_out_second() + jb1.name + jb1.hours + jb1.pay + jb1.over)
         else:
             self.response.write(f.print_out())

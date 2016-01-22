@@ -8,11 +8,6 @@ class PayStub(object):
 
         self.__check = []
 
-        # to do: have an array to hold movie info
-        # some way to add to that array
-        # generate a list at the end
-        # calculate time span
-
     def add_check(self, c):
         self.__check.append(c)
 
@@ -33,6 +28,16 @@ class PayStub(object):
         span = int(time[0]) * int(time[1])
 
         return str(span)
+
+
+    def over_time(self):
+        over = []
+        for check in self.__check:
+            over.append(check.over)
+
+        num = int(over[0]) * 100
+
+        return str(num)
 
 
 class JobData(object):
