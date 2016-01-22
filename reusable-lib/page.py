@@ -53,3 +53,54 @@ class FormPage(object):  # this is the page class for holding the html elements
         all = self.head + self.body + self.close
         all = all.format(**locals())
         return all
+
+
+
+
+
+
+
+
+
+
+
+
+class ResultsPage(object):
+    def __init__(self):
+        self.__title = "Welcome"
+        self.css = "css/style.css"
+        self.__head = """
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Enter your info:</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
