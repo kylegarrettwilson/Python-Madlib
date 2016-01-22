@@ -33,8 +33,8 @@ class MainHandler(webapp2.RequestHandler):   # main handler class for connecting
             pay.add_check(jb1)  # calling the add check function
             pay.calc_check()  # calling the function
             pay.over_time()   # calling the function
-            r.body = pay.calc_check() + pay.over_time()   # printing the results from the two calcs to the body tag
-            self.response.write(r.print_out_second() + jb1.name + jb1.hours + jb1.pay + jb1.over)  # printing to window
+            r.body = 'Total check amount: ' + pay.calc_check() + '<br>' + 'Total overtime amount: ' + pay.over_time() + '<br />' # printing the results from the two calcs to the body tag
+            self.response.write(r.print_out_second() + 'Last Name: ' + jb1.name + '<br>' + 'Hours worked: ' + jb1.hours + '<br>' + 'Pay per hour: ' + jb1.pay + '<br>' + 'Over time: ' + jb1.over)  # printing to window
         else:
             self.response.write(f.print_out())   # or else printing the form
 
