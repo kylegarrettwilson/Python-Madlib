@@ -11,7 +11,7 @@ class FavoriteMovies(object):
 
 
         # adding the movies one at a time
-    def add_movie (self, m):
+    def add_movie(self, m):
         self.__movie_list.append(m)
 
 
