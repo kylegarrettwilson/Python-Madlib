@@ -11,10 +11,21 @@
 
 
 import webapp2
+from page import FormPage
 
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+
+        if self.request.GET:
+            name = self.request.GET['last']
+            hours = self.request.GET['hours']
+            pay = self.request.GET['pay']
+            over = self.request.GET['over']
+        else:
+            f = FormPage()
+            self.response.write(f.print_out())
+
 
 
 

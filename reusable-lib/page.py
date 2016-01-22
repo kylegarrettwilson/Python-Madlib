@@ -47,3 +47,9 @@ class FormPage(object):  # this is the page class for holding the html elements
 </html>
 
         """
+
+
+        def print_out(self):
+            all = self.head + self.body + self.close
+            all = all.format(**locals())
+            return all
