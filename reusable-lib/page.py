@@ -5,7 +5,7 @@
 # at least four input from the user
 
 
-class FormPage(object):  # this is the page class for holding the html elements
+class FormPage(object):  # this is the form page class for holding the html elements
     def __init__(self):  # constructor method
         self.title = "Welcome!"  # this is a variable that changes the self.title in html
         self.css = "css/style.css"  # this is a link to the css file from the yaml
@@ -48,24 +48,13 @@ class FormPage(object):  # this is the page class for holding the html elements
 
         """
 
-
-    def print_out(self):
+    def print_out(self):  # this is sending back the html above to the mainhandler class
         all = self.head + self.body + self.close
         all = all.format(**locals())
         return all
 
 
-
-
-
-
-
-
-
-
-
-
-class ResultsPage(object):
+class ResultsPage(object):    # this is the results html page to be printed after the form is submitted
     def __init__(self):
         self.__title = "Welcome"
         self.css = "css/style.css"
@@ -87,7 +76,7 @@ class ResultsPage(object):
 </html>
         """
 
-    def print_out_second(self):
+    def print_out_second(self):   # this is a way of sending back the html to the mainhandler class
         all = self.__head + self.body + self.__error + self.__close
         return all
 
