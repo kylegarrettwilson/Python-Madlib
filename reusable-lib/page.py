@@ -8,7 +8,7 @@
 class FormPage(object):  # this is the form page class for holding the html elements
     def __init__(self):  # constructor method
         self.title = "Welcome!"  # this is a variable that changes the self.title in html
-        self.css = "css/style.css"  # this is a link to the css file from the yaml
+        self.__css = "css/styles.css"  # this is a link to the css file from the yaml
         self.head = """
 <!DOCTYPE HTML>
 <html>
@@ -53,17 +53,26 @@ class FormPage(object):  # this is the form page class for holding the html elem
         all = all.format(**locals())
         return all
 
+    # write only
+    @property
+    def css(self):
+        return self.__css
+
+    @css.setter
+    def css(self, css_file):
+        self.__css = css_file
+
 
 class ResultsPage(object):    # this is the results html page to be printed after the form is submitted
     def __init__(self):
         self.__title = "Welcome"
-        self.css = "css/style.css"
+        self.css = "css/styles.css"
         self.__head = """
 <!DOCTYPE HTML>
 <html>
     <head>
         <title>Enter your info:</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         """

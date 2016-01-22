@@ -21,6 +21,7 @@ class MainHandler(webapp2.RequestHandler):   # main handler class for connecting
     def get(self):
 
         f = FormPage()  # variable for form page class
+        f.css = "css/styles.css"
         r = ResultsPage()  # variable for results page class
         pay = PayStub()  # variable for the paystub class
 
