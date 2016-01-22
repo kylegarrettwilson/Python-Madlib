@@ -12,10 +12,16 @@
 
 import webapp2
 from page import FormPage
+from page import ResultsPage
 
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+
+        f = FormPage()
+        r = ResultsPage()
+
+
 
         if self.request.GET:
             name = self.request.GET['last']
@@ -24,7 +30,6 @@ class MainHandler(webapp2.RequestHandler):
             over = self.request.GET['over']
             self.response.write(name + hours + pay + over)
         else:
-            f = FormPage()
             self.response.write(f.print_out())
 
 
