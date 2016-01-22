@@ -80,6 +80,13 @@ class ResultsPage(object):
         """
 
 
+        self.body = ""
+        self.__error = ''  # not going to use
+        self.__close = """
+    </body>
+</html>
+        """
+
 
 
 
