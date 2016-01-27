@@ -1,51 +1,32 @@
-# this will hold the classes that will interpret and calculate the data
-# needs to be fully encapsulated
-# three utility functions
+# store user inputs and then encapsulate
+# calc check total
+# calc overtime total
+# calc total hours worked each week on average
+# calc some type of bonus
 
 
-class PayStub(object):
-    def __init__(self):  # initializing function
-
-        self.__check = []  # putting all of the worker's numbers and name into an array
-
-    def add_check(self, c):  # this adds to the check array above
-        self.__check.append(c)  # by appending c
-
-    def compile_list(self):  # this compiles the list of items for the check array
-        output = ''
-        for check in self.__check:  # loops through the items
-            output +=  check.name + str(check.hours) + str(check.pay) + str(check.over) + ' <br />'
-        return output
-
-    def calc_check(self): # this is a check calculator for how much the employee is due per hours worked and wage per hour
-        time = []  # this puts it both the hours worked and the amount per hour in an array
-        for check in self.__check:  # loops through the __check array to append the new pay per hour amount
-            time.append(check.pay)  # appends it to the time array
-
-        for check in self.__check: # loops through the __check array to append the new hours worked amount
-            time.append(check.hours)  # appends it to the time array
-
-        span = int(time[0]) * int(time[1])   # this calculates the number in the first position of the array with the second
-
-        return str(span)  # this returns the check total back to the main
-
-    def over_time(self):  # this calculates overtime based on hours worked
-        over = []  # array to hold the overtime hours
-        for check in self.__check:  # loops through the __check array to append the new overtime amount
-            over.append(check.over)  # this appends the number to the over array
-
-        num = int(over[0]) * 100   # this calculates the overtime hours times by 100
-
-        return str(num)  # returns that number as a string to be printed to window
 
 
 class JobData(object):   # this is a data object to hold the items from the form
     def __init__(self):
 
         self.name = ''  # these are temp holding spots for the items to be entered
-        self.hours = 0
-        self.__pay = 0
-        self.over = 0
+        self.__hours = 0  # these are temp holding spots for the items to be entered
+        self.__pay = 0   # these are temp holding spots for the items to be entered
+        self.over = 0   # these are temp holding spots for the items to be entered
+
+
+        @property   # I want the hours to be private so it can't be easily messed with, this is a getter
+        def hours(self):  # this is what the new reference name will be for the private hours above
+            return self.__hours
+
+        @hours.setter   # this is the setter for the hours worked
+        def hours(self, h):  # method for updating
+
+            if h > 40:  # cannot work more than 40 hours a week, it would be overtime for extra
+                print "Any overtime needs be calculated in the overtime field"  # change input fields
+            else:
+                self.__hours = h   # the new hours setter
 
         @property   # the pay is private so I set upa getter and a setter
         def pay(self):   # method for retrieving the private pay amount above
@@ -58,3 +39,49 @@ class JobData(object):   # this is a data object to hold the items from the form
                 print "Invalid Hourly Rate"   # prints to console
             else:
                 self.__pay = p     # returned as p
+
+    def calc_check(self):  # this calcs the check total depending on pay per hour and hours worked
+
+        total = int(self.hours) * int(self.pay)   # this hours worked times by pay
+
+        return str(total)   # total returned
+
+    def over_time(self):   # this calcs the overtime pay
+
+        num = int(self.over) * (int(self.pay * 2))   # overtime is charged as double pay
+
+        return str(num)  # return num
+
+    def total_time(self):  # this is the average amount of hours worked per week
+
+        time = (int(self.hours) + int(self.over)) / 4   # hours plus overtime divided by four weeks in a month
+
+        return str(time)  # return time
+
+    def bonus(self):   # bonus calculator
+        if int(self.over) > 35:   # if you work greater than 35 overtime hours then you get a bonus
+            return str('You have qualified for a bonus!')   # return this string to let them know
+        else:
+            return str('Keep up the good job!')   # return this if lower then 35
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

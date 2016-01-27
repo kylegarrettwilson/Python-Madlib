@@ -14,7 +14,6 @@ import webapp2
 from page import FormPage
 from page import ResultsPage
 from library import JobData
-from library import PayStub
 
 
 class MainHandler(webapp2.RequestHandler):   # main handler class for connecting everything together
@@ -23,7 +22,7 @@ class MainHandler(webapp2.RequestHandler):   # main handler class for connecting
         f = FormPage()  # variable for form page class
         f.css = "css/styles.css"
         r = ResultsPage()  # variable for results page class
-        pay = PayStub()  # variable for the paystub class
+
 
         if self.request.GET:  # this is an if else statement so ensure the right html is printed
             jb1 = JobData()  # creating an instance
@@ -31,11 +30,12 @@ class MainHandler(webapp2.RequestHandler):   # main handler class for connecting
             jb1.hours = self.request.GET['hours']  # getting the data from the form
             jb1.pay = self.request.GET['pay']  # getting the data from the form
             jb1.over = self.request.GET['over']  # getting the data from the form
-            pay.add_check(jb1)  # calling the add check function
-            pay.calc_check()  # calling the function
-            pay.over_time()   # calling the function
-            r.body = 'Total check amount: ' + pay.calc_check() + '<br>' + 'Total overtime amount: ' + pay.over_time() + '<br />' # printing the results from the two calcs to the body tag
-            self.response.write(r.print_out_second() + 'Last Name: ' + jb1.name + '<br>' + 'Hours worked: ' + jb1.hours + '<br>' + 'Pay per hour: ' + jb1.pay + '<br>' + 'Over time: ' + jb1.over)  # printing to window
+            jb1.calc_check()  # calling the function
+            jb1.over_time()
+            jb1.total_time()
+            jb1.bonus()
+            r.body = 'Total check amount: ' + jb1.calc_check() + '<br>' + 'Total overtime amount: ' + jb1.over_time() + '<br>' + 'Average hours worked per week: ' + jb1.total_time() + '<br>' + jb1.bonus() + '<br />'   # printing the results from the two calcs to the body tag
+            self.response.write(r.print_out_second() + 'Last Name: ' + jb1.name + '<br>' + 'Hours worked: ' + jb1.hours + '<br>' + 'Pay per hour: ' + jb1.pay + '<br>' + 'Overtime: ' + jb1.over)  # printing to window
         else:
             self.response.write(f.print_out())   # or else printing the form
 
