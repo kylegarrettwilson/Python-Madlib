@@ -13,14 +13,14 @@ body{
 
 
 
-form{
-    width: 600px;
+body{
+    width: 500px;
     margin-top: 100px;
     margin-bottom: 300px;
     margin-left: 10%;
     text-align: center;
     padding: 20px;
-    border: 3px solid black;
+    font-size: 2em;
     background-color: rgba(255, 255, 255, 0.4);
 
 

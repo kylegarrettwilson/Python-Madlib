@@ -21,17 +21,17 @@ class FormPage(object):  # this is the form page class for holding the html elem
 
         self.body = """
             <form method="GET">
-                <label>Enter your last name: </label>
+                <label>Enter your last name: </label><br>
                 <input type="text" name="last" /><br><br>
 
                 <label>Enter the number of hours worked this week (must be between 0 and 40): </label><br>
-                <input type="number" name="hours" min="0" max="40"><br>
+                <input type="number" name="hours" min="0" max="40"><br><br>
 
                 <label>Enter the amount you are paid per hour: </label><br>
-                <input type="number" name="pay"><br>
+                <input type="number" name="pay"><br><br>
 
                 <label>Enter the number of over time hours you worked this week: </label><br>
-                <input type="number" name="over" min="0" max="40"><br>
+                <input type="number" name="over" min="0" max="40"><br><br>
 
 
                 <br>
@@ -66,13 +66,13 @@ class FormPage(object):  # this is the form page class for holding the html elem
 class ResultsPage(object):    # this is the results html page to be printed after the form is submitted
     def __init__(self):
         self.__title = "Welcome"
-        self.css = "css/styles.css"
+        self.css = "css/styles2.css"
         self.__head = """
 <!DOCTYPE HTML>
 <html>
     <head>
         <title>Enter your info:</title>
-        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="css/styles2.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         """
