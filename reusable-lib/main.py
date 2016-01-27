@@ -34,8 +34,8 @@ class MainHandler(webapp2.RequestHandler):   # main handler class for connecting
             jb1.over_time()
             jb1.total_time()
             jb1.bonus()
-            r.body = 'Total check amount: ' + jb1.calc_check() + '<br>' + 'Total overtime amount: ' + jb1.over_time() + '<br>' + 'Average hours worked per week: ' + jb1.total_time() + '<br>' + jb1.bonus() + '<br />'   # printing the results from the two calcs to the body tag
-            self.response.write(r.print_out_second() + 'Last Name: ' + jb1.name + '<br>' + 'Hours worked: ' + jb1.hours + '<br>' + 'Pay per hour: ' + jb1.pay + '<br>' + 'Overtime: ' + jb1.over)  # printing to window
+            r.body = 'Total check amount: ' + jb1.calc_check() + '<br>' + 'Total overtime amount: ' + jb1.over_time() + '<br>' + 'Average hours worked per week: ' + jb1.total_time() + '<br>' + jb1.bonus() + '<br>' + 'Last Name: ' + jb1.name + '<br>' + 'Hours worked: ' + jb1.hours + '<br>' + 'Pay per hour: ' + jb1.pay + '<br>' + 'Overtime: ' + jb1.over  # printing the results from the two calcs to the body tag
+            self.response.write(r.print_out_second())
         else:
             self.response.write(f.print_out())   # or else printing the form
 
