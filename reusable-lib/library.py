@@ -10,11 +10,29 @@
 class JobData(object):   # this is a data object to hold the items from the form
     def __init__(self):
 
-        self.name = ''  # these are temp holding spots for the items to be entered
+        self.__name = ''  # these are temp holding spots for the items to be entered
         self.__hours = 0  # these are temp holding spots for the items to be entered
         self.__pay = 0   # these are temp holding spots for the items to be entered
-        self.over = 0   # these are temp holding spots for the items to be entered
+        self.__over = 0   # these are temp holding spots for the items to be entered
 
+        @property
+        def name(self):
+            return self.__name
+
+        @name.setter
+        def name(self, n):
+            self.__name = n
+
+        @property
+        def over(self):
+            return self.__over
+
+        @over.setter
+        def over(self, o):
+            if o > 60:
+                print "You need to talk to an adviser"
+            else:
+                self.__over = o
 
         @property   # I want the hours to be private so it can't be easily messed with, this is a getter
         def hours(self):  # this is what the new reference name will be for the private hours above
