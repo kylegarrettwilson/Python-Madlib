@@ -20,4 +20,41 @@ class Data(object):
         carl.name = "Carl Filtz"
         carl.title = "Senior Accountant"
         carl.image = "carl.jpg"
-        carl.bio
+        carl.bio = "Carl has been the lead accountant for 10 years."
+        carl.email = "carl@waterman.com"
+        carl.phone = "541-990-8987"
+
+        carl = Employee()
+        carl.name = "Carl Filtz"
+        carl.title = "Senior Accountant"
+        carl.image = "carl.jpg"
+        carl.bio = "Carl has been the lead accountant for 10 years."
+        carl.email = "carl@waterman.com"
+        carl.phone = "541-990-8987"
+
+        carl = Employee()
+        carl.name = "Carl Filtz"
+        carl.title = "Senior Accountant"
+        carl.image = "carl.jpg"
+        carl.bio = "Carl has been the lead accountant for 10 years."
+        carl.email = "carl@waterman.com"
+        carl.phone = "541-990-8987"
+
+        carl = Employee()
+        carl.name = "Carl Filtz"
+        carl.title = "Senior Accountant"
+        carl.image = "carl.jpg"
+        carl.bio = "Carl has been the lead accountant for 10 years."
+        carl.email = "carl@waterman.com"
+        carl.phone = "541-990-8987"
+
+        carl = Employee()
+        carl.name = "Carl Filtz"
+        carl.title = "Senior Accountant"
+        carl.image = "carl.jpg"
+        carl.bio = "Carl has been the lead accountant for 10 years."
+        carl.email = "carl@waterman.com"
+        carl.phone = "541-990-8987"
+
+
+
