@@ -56,5 +56,4 @@ class Data(object):
         heather.email = "heather@waterman.com"
         heather.phone = "541-340-9983"
 
-
-
+        self.people = [carl, roy, ned, pete, heather]
