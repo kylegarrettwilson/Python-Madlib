@@ -30,7 +30,7 @@ class ContentPage(Page):
     def __init__(self):
         super(Page, self).__init__()
 
-        self._link_open = '<a '
+        self._link_open = '<a href="?email=carl@waterman.com'>Carl</a>
         self._link_close = '</a><br>'
         self.__info = ''
 

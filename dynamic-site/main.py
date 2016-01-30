@@ -10,8 +10,13 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-
-
+        if self.request.GET:
+            elif
+            elif
+            elif
+            elif
+        else:
+            # default no variables
 
 
 
