@@ -19,4 +19,9 @@ class Page(object):
 
     def print_now(self):
         return self._head + self._body + self._close
-            
+
+class ContentPage(Page):
+    def __init__(self):
+        super(Page, self).__init__()
+
+        
