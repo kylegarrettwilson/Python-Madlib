@@ -23,25 +23,36 @@ class MainHandler(webapp2.RequestHandler):
         employee5 = d.people[4].title + d.people[4].bio + d.people[4].email + d.people[4].image + d.people[4].phone
 
 
+
         if self.request.GET:
-            name = self.request.GET('carl')
-            self.response.write((c.print_now() + name + employee1))
+            user = self.request.GET['user']
+            if user == 'carl':
+                c._body = (user + employee1)
+                self.response.write(c.print_now())
 
-        elif self.request.GET:
-            name = self.request.GET('roy')
-            self.response.write((c.print_now() + name + employee2))
+        if self.request.GET:
+            user = self.request.GET['user']
+            if user == 'roy':
+                c._body = (user + employee2)
+                self.response.write(c.print_now())
 
-        elif self.request.GET:
-            name = self.request.GET('ned')
-            self.response.write((c.print_now() + name + employee3))
+        if self.request.GET:
+            user = self.request.GET['user']
+            if user == 'ned':
+                c._body = (user + employee3)
+                self.response.write(c.print_now())
 
-        elif self.request.GET:
-            name = self.request.GET('pete')
-            self.response.write((c.print_now() + name + employee4))
+        if self.request.GET:
+            user = self.request.GET['user']
+            if user == 'pete':
+                c._body = (user + employee4)
+                self.response.write(c.print_now())
 
-        elif self.request.GET:
-            name = self.request.GET('heather')
-            self.response.write((c.print_now() + name + employee5))
+        if self.request.GET:
+            user = self.request.GET['user']
+            if user == 'heather':
+                c._body = (user + employee5)
+                self.response.write(c.print_now())
 
         else:
             self.response.write(c.print_now())

@@ -58,6 +58,3 @@ class Data(object):
 
         self.people = [carl, roy, ned, pete, heather]
 
-    def people_ref(self, people):
-        people_only = self.people
-        return people_only[people]

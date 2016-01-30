@@ -32,11 +32,11 @@ class LinkPage(Page):
     def __init__(self):
         super(LinkPage, self).__init__()
 
-        self.link1 = '<a href="localhost:15080/?name=carl">Carl</a>'
-        self.link2 = '<a href="localhost:15080/?name=roy">Roy</a>'
-        self.link3 = '<a href="localhost:15080/?name=ned">Ned</a>'
-        self.link4 = '<a href="localhost:15080/?name=pete">Pete</a>'
-        self.link5 = '<a href="localhost:15080/?name=heather">Heather</a>'
+        self.link1 = '<a href="?user=carl">Carl</a>'
+        self.link2 = '<a href="?user=roy">Roy</a>'
+        self.link3 = '<a href="?user=ned">Ned</a>'
+        self.link4 = '<a href="?user=pete">Pete</a>'
+        self.link5 = '<a href="?user=heather">Heather</a>'
 
 
     def print_now(self):
