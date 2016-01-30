@@ -15,7 +15,8 @@ class Page(object):
     </head>
     <body>'''
 
-        self._body = ''
+        self._body = '<section> '
+
         self._close = '''
     </body>
 </html>'''
@@ -30,9 +31,33 @@ class ContentPage(Page):
     def __init__(self):
         super(Page, self).__init__()
 
-        self._link_open = '<a href="?email=carl@waterman.com'>Carl</a>
-        self._link_close = '</a><br>'
-        self.__info = ''
+        self.list_open =
+
+    def print_now(self):
+        return self._head + self._body + self.link + self._close
+
+
+
+
+
+
+    #@property
+    #def inputs(self):
+      #  pass
+
+    #@inputs.setter
+   # def inputs(self, ar):
+      #  self.__inputs = ar
+      #  for item in ar:
+      #      self.__link_inputs += ''
+
+
+
+
+
+
+
+
 
 
 
