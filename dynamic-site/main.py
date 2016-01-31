@@ -27,34 +27,34 @@ class MainHandler(webapp2.RequestHandler):
             user = self.request.GET['user']
             if user == 'carl':
                 c.inputs = (employee1)
-                self.response.write(c.print_now())
+                self.response.write(c.print_now2())
 
         if self.request.GET:
             user = self.request.GET['user']
             if user == 'roy':
                 c.inputs = (employee2)
-                self.response.write(c.print_now())
+                self.response.write(c.print_now2())
 
         if self.request.GET:
             user = self.request.GET['user']
             if user == 'ned':
                 c.inputs = (employee3)
-                self.response.write(c.print_now())
+                self.response.write(c.print_now2())
 
         if self.request.GET:
             user = self.request.GET['user']
             if user == 'pete':
                 c.inputs = (employee4)
-                self.response.write(c.print_now())
+                self.response.write(c.print_now2())
 
         if self.request.GET:
             user = self.request.GET['user']
             if user == 'heather':
                 c.inputs = (employee5)
-                self.response.write(c.print_now())
+                self.response.write(c.print_now2())
 
         else:
-            self.response.write(c.print_now())
+            self.response.write(c.print_now1())
 
 
 app = webapp2.WSGIApplication([

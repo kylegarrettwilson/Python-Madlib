@@ -15,8 +15,14 @@ class Page(object):
     </head>
     <body>'''
 
-        self.body = '<h1>Waterman Accounting</h1>' \
-                    '<h3>"We protect you from the IRS!"</h3>'
+        self.body = '''
+        <h1>Waterman Accounting</h1>
+        <h3>"We protect you from the IRS!"</h3>
+
+
+
+
+                    '''
 
         self.section = ''
 
@@ -42,10 +48,14 @@ class LinkPage(Page):
         self.total_link = '<nav>' + self.link1 + self.link2 + self.link3 + self.link4 + self.link5 + '</nav>'
 
         self.section_open = '<section>'
+        self.section_filler = '<p>Pick one of our dedicated professionals</p>'
         self.inputs = ''
         self.section_close = '</section>'
 
-    def print_now(self):
+    def print_now1(self):
+        return self._head + self.body + self.total_link + self.section_open + self.section_filler + self.section_close + self._close
+
+    def print_now2(self):
         return self._head + self.body + self.total_link + self.section_open + self.inputs + self.section_close + self._close
 
 
