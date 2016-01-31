@@ -3,8 +3,6 @@
 # Dynamic Website
 
 
-
-
 import webapp2
 from data import Employee     # importing a class
 from data import Data    # importing a class
