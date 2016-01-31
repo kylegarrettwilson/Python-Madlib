@@ -12,6 +12,11 @@ class Employee(object):
         self.bio = ""
         self.email = ""
         self.phone = ""
+        self.wage = 0
+
+    def calc_wage(self):
+        total = self.wage * 4
+        return str(total)
 
 
 class Data(object):
@@ -24,6 +29,7 @@ class Data(object):
         carl.bio = "Carl has been the lead accountant for 10 years."
         carl.email = "carl@waterman.com"
         carl.phone = "541-990-8987"
+        carl.wage = 34
 
         roy = Employee()
         roy.name = "Roy Barnes"
@@ -32,6 +38,7 @@ class Data(object):
         roy.bio = "Roy has been a junior accountant for 2 years."
         roy.email = "roy@waterman.com"
         roy.phone = "541-930-7773"
+        roy.wage = 34
 
         ned = Employee()
         ned.name = "Ned Lighthouse"
@@ -40,6 +47,7 @@ class Data(object):
         ned.bio = "Ned has been a junior accountant for 4 years."
         ned.email = "ned@waterman.com"
         ned.phone = "541-960-9292"
+        carl.wage = 34
 
         pete = Employee()
         pete.name = "Pete Kohlman"
@@ -48,6 +56,7 @@ class Data(object):
         pete.bio = "Pete has been a junior accountant for 3 years."
         pete.email = "carl@waterman.com"
         pete.phone = "541-990-8987"
+        carl.wage = 34
 
         heather = Employee()
         heather.name = "Heather Jones"
@@ -56,6 +65,7 @@ class Data(object):
         heather.bio = "Heather is an attorney who specializes in tax law."
         heather.email = "heather@waterman.com"
         heather.phone = "541-340-9983"
+        carl.wage = 34
 
         self.people = [carl, roy, ned, pete, heather]
 

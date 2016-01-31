@@ -19,12 +19,9 @@ class Page(object):
         <h1>Waterman Accounting</h1>
         <h3>"We protect you from the IRS!"</h3>
 
-
-
-
                     '''
 
-        self.section = ''
+        self.section_open = ''
 
         self._close = '''
     </body>
