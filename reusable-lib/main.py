@@ -20,7 +20,7 @@ class MainHandler(webapp2.RequestHandler):   # main handler class for connecting
     def get(self):
 
         f = FormPage()  # variable for form page class
-        f.css = "css/styles.css"
+        f.css = "css/styles.css"   # this is the css file for styling
         r = ResultsPage()  # variable for results page class
 
 
@@ -30,14 +30,14 @@ class MainHandler(webapp2.RequestHandler):   # main handler class for connecting
             jb1.hours = self.request.GET['hours']  # getting the data from the form
             jb1.pay = self.request.GET['pay']  # getting the data from the form
             jb1.over = self.request.GET['over']  # getting the data from the form
-            jb1.calc_check()  # calling the function
-            jb1.over_time()
-            jb1.total_time()
-            jb1.bonus()
-            r.body = 'Total check amount: ' + jb1.calc_check() + '<br>' + 'Total overtime amount: ' + jb1.over_time() + '<br>' + 'Average hours worked per week: ' + jb1.total_time() + '<br>' + jb1.bonus() + '<br>' + 'Last Name: ' + jb1.name + '<br>' + 'Hours worked: ' + jb1.hours + '<br>' + 'Pay per hour: ' + jb1.pay + '<br>' + 'Overtime: ' + jb1.over  # printing the results from the two calcs to the body tag
-            self.response.write(r.print_out_second())
-        else:
-            self.response.write(f.print_out())   # or else printing the form
+            jb1.calc_check()  # calling the check amount from the library page
+            jb1.over_time()   # calling the over time amount from library page
+            jb1.total_time()  # calling the total time worked from the library page
+            jb1.bonus()   # calling the bonus qualification from the library page
+            r.body = 'Total check amount: ' + jb1.calc_check() + '<br>' + 'Total overtime amount: ' + jb1.over_time() + '<br>' + 'Average hours worked per week: ' + jb1.total_time() + '<br>' + jb1.bonus() + '<br>' + 'Last Name: ' + jb1.name + '<br>' + 'Hours worked: ' + jb1.hours + '<br>' + 'Pay per hour: ' + jb1.pay + '<br>' + 'Overtime: ' + jb1.over  # printing the results from the library calculations and the user entered amounts to the body tag so it is all within the html document
+            self.response.write(r.print_out_second())  # this is printing one of the html pages to the window
+        else:  # if there are no items entered by the user, print this
+            self.response.write(f.print_out())   # print the form page
 
 
 

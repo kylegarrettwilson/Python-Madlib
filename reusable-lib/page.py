@@ -6,9 +6,9 @@
 
 
 class FormPage(object):  # this is the form page class for holding the html elements
-    def __init__(self):  # constructor method
+    def __init__(self):  # initializing function
         self.title = "Welcome!"  # this is a variable that changes the self.title in html
-        self.__css = "css/styles.css"  # this is a link to the css file from the yaml
+        self.__css = "css/styles.css"  # this is a link to the css file from the yaml file
         self.head = """
 <!DOCTYPE HTML>
 <html>
@@ -47,26 +47,26 @@ class FormPage(object):  # this is the form page class for holding the html elem
 </html>
 
         """
-
+        # the self.head self.body and self.close hold all of the necessary html elements for the form so they can be printed to the window from the mainhandler class
     def print_out(self):  # this is sending back the html above to the mainhandler class
-        all = self.head + self.body + self.close
-        all = all.format(**locals())
-        return all
+        all = self.head + self.body + self.close   # combining the html elements all together
+        all = all.format(**locals())   # this uses the locals function to change the html title, css and all local attributes
+        return all   # return the entire html page with print out
 
     # write only
-    @property
-    def css(self):
-        return self.__css
+    @property  # this is a getter for the private css attribute above
+    def css(self):  # this is the function for the getter to be used by the setter
+        return self.__css   # returning the private attribute above
 
-    @css.setter
-    def css(self, css_file):
-        self.__css = css_file
+    @css.setter  # this is a setter for the css file so we can implement the correct file
+    def css(self, css_file):   # this is using a instance attribute to change the css file, it is a function
+        self.__css = css_file   # chaning the private attribute value to the new css file
 
 
-class ResultsPage(object):    # this is the results html page to be printed after the form is submitted
-    def __init__(self):
-        self.__title = "Welcome"
-        self.css = "css/styles2.css"
+class ResultsPage(object):    # this is the results html page to be printed after the form is submitted by the user
+    def __init__(self):   # initializing function
+        self.__title = "Welcome"    # this is a title attribute
+        self.css = "css/styles2.css"  # this is choosing a different css than the first html page
         self.__head = """
 <!DOCTYPE HTML>
 <html>
@@ -84,10 +84,10 @@ class ResultsPage(object):    # this is the results html page to be printed afte
     </body>
 </html>
         """
-
+        # this is where the results will print to the window, the self.body is empty because the mainhandler will be putting the info calculated in the library classes to that spot in the html
     def print_out_second(self):   # this is a way of sending back the html to the mainhandler class
-        all = self.__head + self.body + self.__error + self.__close
-        return all
+        all = self.__head + self.body + self.__error + self.__close   # combining all of the html elements together
+        return all  # returning all of the html so it can be displayed by mainhandler if else statement
 
 
 
